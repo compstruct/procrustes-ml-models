@@ -1,4 +1,4 @@
-~[Procrustes](./resources/micro.png)
+![Procrustes](./resources/micro.png)
 
 The success of DNN pruning has led to the development of energy-efficient inference accelerators that support pruned models with sparse weight and activation tensors.
  Because the memory layouts and dataflows in these architectures are optimized for the access patterns during inference, however, they do not efficiently support the emerging sparse training techniques.
