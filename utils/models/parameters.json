@@ -1,0 +1,447 @@
+{
+    "MASTER":{
+        "track_size": [0],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [64],
+        "lr_value": [0.74],
+        "lr_gamma": [0.9],
+        "lr_gamma_freq_min": 10,
+        "lr_gamma_freq_max": 100,
+        "lr_gamma_freq": [1],
+        "lr_gamma_warmup": "False",
+        "momentum": [0],
+        "drop_back": "True",
+        "step_type": "fixedStep",
+        "epoch": 100,
+        "num_lr_samples": 1,
+        "num_lr_gamma_samples": 1,
+	"q_inits": [1e-2],
+	"q_steps": [1e-6],
+        "q_sfs" : ["False"]
+        },
+
+    "mobilenetv2_tuning_qe":{
+	"track_size": [350000],
+	"weight_decay":  [4e-5],
+	"init_decay":  [0.9],
+	"batch_size":  [64],
+	"lr_value": [0.2],
+	"lr_gamma": [0.95],
+	"lr_gamma_freq": [1],
+	"momentum": [0],
+	"drop_back": "True",
+	"step_type": "fixedStep2",
+	"epoch": 10,
+	"num_lr_samples": 1,
+	"num_lr_gamma_samples": 1,
+	"q_inits": [1e-2, 1e-3, 1e-4],
+	"q_steps": [1e-6, 1e-5, 1e-4],
+	"q_sfs": ["False", "True"]
+    },
+
+    "resnet18_tuning_qe":{
+	"track_size": [1000000],
+	"weight_decay":  [4e-5],
+	"init_decay":  [0.9],
+	"batch_size":  [32],
+	"lr_value": [0.2],
+	"lr_gamma": [0.95],
+	"lr_gamma_freq": [1],
+	"momentum": [0],
+	"drop_back": "True",
+	"step_type": "fixedStep2",
+	"epoch": 10,
+	"num_lr_samples": 1,
+	"num_lr_gamma_samples": 1,
+	"q_inits": [0.01, 0.03, 0.1, 0.3],
+	"q_steps": [3e-6, 1e-6, 6e-5, 3e-5],
+	"q_sfs": ["False"]
+    },
+
+    "mobilenetv2_tuning_sample":{
+        "track_size": [2000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [64],
+        "lr_value": [0.74],
+        "lr_gamma": [0.5, 0.7, 0.9],
+        "lr_gamma_freq_min": 10,
+        "lr_gamma_freq_max": 100,
+        "lr_gamma_freq": [2,5],
+        "lr_gamma_warmup": "False",
+        "momentum": [0],
+        "drop_back": "True",
+        "step_type": "fixedStep",
+        "epoch": 50,
+        "num_lr_samples": 1,
+        "num_lr_gamma_samples": 3
+        },
+
+    "mobilenetv2_2M_init_tune":{
+        "track_size": [2000000],
+        "weight_decay":  [4e-5],
+        "lr_value": [0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "True",
+        "num_lr_samples": 7
+        },
+
+    "mobilenetv2_2M_init_noMo":{
+        "track_size": [2000000],
+        "weight_decay":  [4e-5, 0],
+        "init_decay":  [0.9,0],
+        "batch_size":  [64],
+        "lr_value": [0.7, 0.4],
+        "lr_gamma": [0.9, 0.92, 0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_gamma_samples": 3,
+        "num_lr_samples": 2
+        },
+
+    "mobilenetv2_0.5M_init_noMo":{
+        "track_size": [500000],
+        "weight_decay":  [0],
+        "batch_size":  [64],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 10
+        },
+    "mobilenetv2_1M_init_tune":{
+        "track_size": [1000000],
+        "weight_decay":  [4e-5],
+        "lr_value": [0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "True",
+        "num_lr_samples": 4
+        },
+    "mobilenetv2_2M_1":{
+        "track_size": [2000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [64],
+        "lr_value": [0.74],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1]
+        },
+    "mobilenetv2_2M_2":{
+        "track_size": [2000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [64],
+        "lr_value": [0.74],
+        "lr_gamma": [0.5],
+        "lr_gamma_freq": [7,10,20]
+        },
+    "mobilenetv2_1M_init_noMo":{
+        "track_size": [1000000],
+        "weight_decay":  [0],
+        "batch_size":  [64],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 10
+        },
+    "mobilenetv2_1M_1":{
+        "track_size": [1000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [64],
+        "lr_value": [0.74],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1]
+        },
+    "mobilenetv2_1M_2":{
+        "track_size": [1000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [64],
+        "lr_value": [0.74],
+        "lr_gamma": [0.5],
+        "lr_gamma_freq": [7,10,20]
+        },
+    "mobilenetv2_baseline":{
+        "weight_decay":  [4e-5],
+        "batch_size":  [64],
+        "lr_value": [0.045],
+        "lr_gamma": [0.98],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "False"
+        },
+
+    "mobilenetv2_baseline_init_tune":{
+        "weight_decay":  [4e-5],
+        "batch_size":  [64],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "False",
+        "num_lr_samples": 10
+        },
+    "mobilenetv2_baseline_init_noMo":{
+        "weight_decay":  [4e-05],
+        "batch_size":  [64],
+        "init_decay":  [0.9,1],
+        "lr_value": [0.6, 0.4],
+        "lr_gamma": [0.9, 0.92, 0.95],
+        "num_lr_gamma_samples": 3,
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "False",
+        "num_lr_samples": 2
+        },
+    "efficientnet-b2_baseline_init_tune":{
+        "weight_decay":  [4e-5],
+        "batch_size":  [32],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "False",
+        "num_lr_samples": 10
+        },
+    "efficientnet-b2_baseline":{
+        "weight_decay":  [4e-5],
+        "batch_size":  [32],
+        "lr_value": [0.045],
+        "lr_gamma": [0.98],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "False"
+        },
+    "efficientnet-b2_5M_1":{
+        "track_size": [5000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [32],
+        "lr_value": [0.74],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "True"
+        },
+
+    "efficientnet-b2_5M_2":{
+        "track_size": [5000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [32],
+        "lr_value": [0.54],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "True"
+        },
+
+    "efficientnet-b2_2M_1":{
+        "track_size": [2000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [32],
+        "lr_value": [0.74],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "True"
+        },
+    "resnet18_baseline":{
+        "weight_decay":  [4e-5],
+        "batch_size":  [32],
+        "lr_value": [0.045],
+        "lr_gamma": [0.98],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "False"
+    },
+    "resnet18_baseline_init_tune":{
+        "weight_decay":  [4e-5],
+        "batch_size":  [32],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "False",
+        "num_lr_samples": 10
+        },
+    "resnet18_baseline_init_noMo":{
+        "weight_decay":  [0],
+        "batch_size":  [32],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "False",
+        "num_lr_samples": 10
+        },
+    "resnet18_baseline_noMo":{
+        "weight_decay":  [0],
+        "batch_size":  [32],
+        "lr_value": [0.4, 0.2],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "False",
+        "num_lr_samples": 2
+        },
+    "resnet18_2M_1":{
+        "track_size": [2000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [32],
+        "lr_value": [0.2],
+        "lr_gamma": [0.97],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "True"
+    },
+    "resnet18_2M_init_tune":{
+        "track_size": [2000000],
+        "weight_decay":  [4e-5],
+        "batch_size":  [32],
+        "lr_value": [0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.05],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "True",
+        "num_lr_samples": 7
+        },
+    "resnet18_2M_init_noMo":{
+        "track_size": [2000000],
+        "weight_decay":  [0],
+        "batch_size":  [32],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 10
+        },
+    "resnet18_4M_init_noMo":{
+        "track_size": [4000000],
+        "weight_decay":  [4e-05, 0],
+        "init_decay":  [0.9,1],
+        "batch_size":  [32],
+        "lr_value": [0.4, 0.2],
+        "lr_gamma": [0.9,0.92,0.95],
+        "num_lr_gamma_samples": 3,
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 2
+        },
+    "resnet18_3M_init_noMo":{
+        "track_size": [3000000],
+        "weight_decay":  [4e-05, 0],
+        "init_decay":  [0.9,1],
+        "batch_size":  [32],
+        "lr_value": [0.4, 0.2],
+        "lr_gamma": [0.9,0.92,0.95],
+        "num_lr_gamma_samples": 3,
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 2
+        },
+
+    "resnet18_2M_noMo":{
+        "track_size": [2000000],
+        "weight_decay":  [0],
+        "batch_size":  [32],
+        "lr_value": [0.6, 0.4],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 2
+        },
+    "resnet18_1M_init_noMo":{
+        "track_size": [1000000],
+        "weight_decay":  [0],
+        "batch_size":  [32],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 10
+        },
+    "resnet18_1M_noMo":{
+        "track_size": [1000000],
+        "weight_decay":  [0],
+        "batch_size":  [32],
+        "lr_value": [0.4],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 1
+        },
+    "resnet18_1M_1":{
+        "track_size": [1000000],
+        "weight_decay":  [4e-5],
+        "init_decay":  [0.9],
+        "batch_size":  [32],
+        "lr_value": [0.25],
+        "lr_gamma": [0.97],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "True"
+    },
+    "resnet18_1M_init_tune":{
+        "track_size": [1000000],
+        "weight_decay":  [4e-5],
+        "batch_size":  [32],
+        "lr_value": [0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0.9],
+        "drop_back": "True",
+        "num_lr_samples": 4
+        },
+    "efficientnet-b0_baseline_init_noMo":{
+        "weight_decay":  [0],
+        "batch_size":  [32],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "False",
+        "num_lr_samples": 10
+        },
+    "efficientnet-b0_0.5M_init_noMo":{
+        "track_size": [500000],
+        "weight_decay":  [0],
+        "batch_size":  [32],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 10
+        },
+    "efficientnet-b0_1M_init_noMo":{
+        "track_size": [1000000],
+        "weight_decay":  [0],
+        "batch_size":  [32],
+        "lr_value": [0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.07, 0.05, 0.03],
+        "lr_gamma": [0.95],
+        "lr_gamma_freq": [1],
+        "momentum": [0],
+        "drop_back": "True",
+        "num_lr_samples": 10
+        }
+}
+

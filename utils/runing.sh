@@ -1,0 +1,1 @@
+squeue -u aming -o "%.18i %90j %20S %10L %.10M %.6D %.2t" | grep ' R' | sed 's/.*Ima/Ima/g' | sed 's/fied .*/fied/g' | sed 's/ing .*/ing/g' | sed 's/line .*/line/g'  | sed 's/plat .*/plat/g'> runing.t
